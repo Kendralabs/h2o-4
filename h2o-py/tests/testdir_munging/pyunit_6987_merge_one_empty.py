@@ -26,13 +26,13 @@ def mergeOneEmptyFrame():
     
     assert f1Mergef2.ncols==2,  "Expected two columns but actual number of row is {0}!".format(f1Mergef2.ncols)
     assert f2Mergef1.ncols==2,  "Expected two columns but actual number of row is {0}!".format(f2Mergef1.ncols)
-    
-    assert f1Mergef2[0,0]==file1[0,0], "f1Mergef2: Expected content {0} at row 0, col 0 but actual content is {1}".format(file1[0,0], f1Mergef2[0,0])
-    assert f2Mergef1[0,0]==file1[0,0], "f2Mergef1: Expected content {0} at row 0, col 0 but actual content is {1}".format(file1[0,0], f2Mergef1[0,0])
-
-    assert f1Mergef2[0,1]==file1[0,1], "f1Mergef2: Expected content {0} at row 0, col 1 but actual content is {1}".format(file1[0,1], f1Mergef2[0,1])
-    assert f2Mergef1[0,1]==file1[0,1], "f2Mergef1: Expected content {0} at row 0, col 1 but actual content is {1}".format(file1[0,1], f2Mergef1[0,1]) 
-    
+    print("checking merge empty with all_y = True")
+    assert f2Mergef1[0,0]==1, "f2Mergef1: Expected content 1 at row 0, col 0 but actual content is {0}".format(f2Mergef1[0,0])
+    assert f2Mergef1[0,1]==0, "f2Mergef1: Expected content 0 at row 0, col 1 but actual content is {0}".format(f2Mergef1[0,1])
+    print("checking merge empty with all_x = True")    
+    assert f1Mergef2[0,0]==1, "f1Mergef2: Expected content 1 at row 0, col 0 but actual content is {0}".format(f1Mergef2[0,0])
+    assert f1Mergef2[0,1]==0, "f1Mergef2: Expected content 0 at row 0, col 1 but actual content is {0}".format(f1Mergef2[0,1])
+   
 if __name__ == "__main__":
     pyunit_utils.standalone_test(mergeOneEmptyFrame)
 else:
