@@ -37,6 +37,7 @@ def interactions():
     model = H2OGeneralizedLinearEstimator(family = "Binomial", alpha=0, lambda_search=False,
                                           interaction_pairs=interaction_pairs, standardize=False)
     model.train(x=xcols, y='label', training_frame=h2o_df)
+    modelNA.train(x=xcols, y='label', training_frame=h2o_df_NA)
     assert_arrays_equal_NA(modelNA._model_json['output']['coefficients_table'].cell_values,
                            model._model_json['output']['coefficients_table'].cell_values)
 

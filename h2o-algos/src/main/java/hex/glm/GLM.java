@@ -1369,7 +1369,7 @@ public class GLM extends ModelBuilder<GLMModel,GLMParameters,GLMOutput> {
           if (!_state._lsNeeded && (Double.isNaN(gram.likelihood) || _state.objective(gram.beta, gram.likelihood) > _state.objective() + _parms._objective_epsilon)) {
             _state._lsNeeded = true;
           } else {
-            if (!firstIter && !_state._lsNeeded && !progress(gram.beta, gram.likelihood)) {
+            if (!progress(gram.beta, gram.likelihood) && !firstIter && !_state._lsNeeded) {
               System.out.println("DONE after " + (iterCnt-1) + " iterations (1)");
               return;
             }

@@ -1162,14 +1162,6 @@ public class DataInfo extends Keyed<DataInfo> {
         InteractionWrappedVec iwv = (InteractionWrappedVec)_adaptedFrame.vec(_cats+i);
         int interactionOffset = getInteractionOffset(chunks,_cats+i,rid);
         int iwvExpLen = iwv.expandedLength(); // minor gain in speed
-        // Tricky situation here:
-        // _dinfo._num = number of interaction columns plus normal predictors
-        // however, real number of numerical columns in _dinfo._adaptedFrame are : 
-        //  for enum by num interactions: total enum levels of all enum by num interaction columns
-        //  for num by num interactions: 1 per interaction column
-        //  normal predictor columns. 
-        // Hence the _numNAFill and _numMean and .... can exceed the _dinfo._num.  I need to be careful when I
-        // refer to the chunks, _numNAFill, _numMean using just _dinfo._num!
         for(int offset=0;offset<iwvExpLen;++offset) { // for enum x num, iwvExpLen > 1
           if( i < _intLvls.length && _intLvls[i]!=null && Arrays.binarySearch(_intLvls[i],offset) < 0 ) continue; // skip the filtered out interactions
           double d=0;
