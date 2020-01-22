@@ -286,7 +286,6 @@ public class XGBoostModel extends Model<XGBoostModel, XGBoostModel.XGBoostParame
     } else {
       params.put("silent", p._quiet_mode);
     }
-    params.put("verbosity", "3");
     if (p._subsample!=1.0) {
       Log.info("Using user-provided parameter subsample instead of sample_rate.");
       params.put("subsample", p._subsample);
