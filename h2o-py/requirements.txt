@@ -27,3 +27,4 @@ mysqlclient
 recommonmark
 sphinx_rtd_theme
 sphinxcontrib-osexample
+pillow>=10.3.0 # not directly required, pinned by Snyk to avoid a vulnerability
