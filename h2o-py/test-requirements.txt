@@ -30,3 +30,4 @@ sphinx_rtd_theme==0.2.4
 git+https://github.com/svx/sphinxcontrib-osexample@1cc4afcc6089083256aa642d9faa12352ef45d68#egg=sphinxcontrib-osexample
 shap==0.28.3
 boto3>=1.7.50
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
